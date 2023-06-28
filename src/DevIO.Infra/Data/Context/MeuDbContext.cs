@@ -23,7 +23,7 @@ namespace DevIO.Infra.Data.Context {
         #region Mapeamentos
 
         public DbSet<Produto> Produtos { get; set; }
-        public DbSet<Endereco> Enderecoes { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Fornecedor> Fornecedores { get; set; }
         #endregion
 

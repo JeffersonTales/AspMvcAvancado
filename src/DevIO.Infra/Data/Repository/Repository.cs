@@ -24,7 +24,6 @@ namespace DevIO.Infra.Data.Repository {
         }
         #endregion
 
-
         #region Metodos de Contrato
         public virtual async Task Adicionar(TEntity entity) {
             this.DbSet.Add(entity);
