@@ -1,4 +1,5 @@
 ﻿using DevIO.Business.Models.Fornecedores;
+using DevIO.Infra.Data.Context;
 using System;
 using System.Data.Entity;
 using System.Threading.Tasks;
@@ -6,6 +7,10 @@ using System.Threading.Tasks;
 namespace DevIO.Infra.Data.Repository {
 
     public class FornecedorRepository : Repository<Fornecedor>, IFornecedorRepository {
+
+        #region Construtor
+        public FornecedorRepository(MeuDbContext context) : base(db: context) {}
+        #endregion
 
         #region Metodos de Contrato
         public async Task<Fornecedor> ObterFornecedorEndereco(Guid Id) {

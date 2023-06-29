@@ -18,8 +18,8 @@ namespace DevIO.Infra.Data.Repository {
         #endregion
 
         #region Construtor
-        protected Repository() {
-            this.Db = new MeuDbContext();
+        protected Repository(MeuDbContext db) {
+            this.Db = db;
             this.DbSet = this.Db.Set<TEntity>(); //acesso aos funcionamentos da entidade
         }
         #endregion
