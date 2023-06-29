@@ -46,6 +46,9 @@
   <ItemGroup>
     <Compile Include="Core\Data\IRepository.cs" />
     <Compile Include="Core\Models\Entity.cs" />
+    <Compile Include="Core\Notificacoes\INotificador.cs" />
+    <Compile Include="Core\Notificacoes\Notificacao.cs" />
+    <Compile Include="Core\Notificacoes\Notificador.cs" />
     <Compile Include="Core\Services\BaseService.cs" />
     <Compile Include="Models\Fornecedores\Endereco.cs" />
     <Compile Include="Models\Fornecedores\Fornecedor.cs" />
@@ -59,6 +62,8 @@
     <Compile Include="Models\Fornecedores\Validations\FornecedorValidation.cs" />
     <Compile Include="Models\Produtos\IProdutoRepository.cs" />
     <Compile Include="Models\Produtos\Produto.cs" />
+    <Compile Include="Models\Produtos\Services\IProdutoService.cs" />
+    <Compile Include="Models\Produtos\Services\ProdutoService.cs" />
     <Compile Include="Models\Produtos\Validations\ProdutoValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
