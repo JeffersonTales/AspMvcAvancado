@@ -1,4 +1,6 @@
-﻿using DevIO.Business.Models.Fornecedores;
+﻿using AutoMapper;
+using DevIO.AspMvc.ViewModels;
+using DevIO.Business.Models.Fornecedores;
 using DevIO.Business.Models.Fornecedores.Services;
 using DevIO.Infra.Data.Repository;
 using System;
@@ -9,34 +11,45 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace DevIO.AspMvc.Controllers {
-    public class FornecedoresController : Controller {
+    public class FornecedoresController : BaseController {
 
-        //#region Atributos
-        //private readonly IFornecedorService _fornecedorService;
-        //#endregion
+        #region Atributos
+        private readonly IFornecedorRepository _fornecedorRepository;
+        private readonly IFornecedorService _fornecedorService;
+        private readonly IMapper _mapper;
 
+        public FornecedoresController(IFornecedorRepository fornecedorRepository, 
+                                      IFornecedorService fornecedorService, 
+                                      IMapper mapper) {
 
-        //#region Construtor
-        //public FornecedoresController() {
-        //    this._fornecedorService = new FornecedorService(fornecedorRepository: new FornecedorRepository(), 
-        //                                                    enderecoRepository: new EnderecoRepository());
-        //}
-        //#endregion
+            this._fornecedorRepository = fornecedorRepository;
+            this._fornecedorService = fornecedorService;
+            this._mapper = mapper;
+        }
+        #endregion
 
-        //// GET: Fornecedores
-        //public async Task<ActionResult> Index() {
+        #region Metodos
 
-        //    var fornecedor = new Fornecedor() {
-        //        Nome = "",
-        //        Documento = "11111",
-        //        Endereco = new Endereco(),
-        //        TipoFornecedor = TipoFornecedor.PessoaFisica,
-        //        Ativo = true
-        //    };
+        [Route(template:"lista-de-fornecedores")]
+        public async Task<ActionResult> Index() {
 
-        //    await this._fornecedorService.Adicionar(fornecedor);
+            return View(this._mapper.Map<IEnumerable<FornecedorViewModel>>(await this._fornecedorRepository.ObterTodos()));
 
-        //    return new EmptyResult();
-        //}
+        }
+
+        private async Task<FornecedorViewModel> ObterFornecedorEndereco(Guid id) {
+
+            return this._mapper.Map<FornecedorViewModel>(await this._fornecedorRepository.ObterFornecedorEndereco(id)); 
+        
+        }
+
+        //07:25
+        private async Task<FornecedorViewModel> ObterFornecedorProdutosEndereco(Guid id) {
+
+            return this._mapper.Map<FornecedorViewModel>(await this._fornecedorRepository.ObterFornecedorProdutosEndereco(id));
+        }
+
+        #endregion
+
     }
 }
