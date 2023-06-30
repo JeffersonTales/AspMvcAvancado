@@ -1,0 +1,102 @@
+﻿@model DevIO.AspMvc.ViewModels.FornecedorViewModel
+
+<div class="form-group">
+    @Html.LabelFor(expression: model => model.Endereco.Cep,
+                   htmlAttributes: new { @class = "control-label col-md-2" })
+
+    <div class="col-md-10">
+        @Html.EditorFor(expression: model => model.Endereco.Cep,
+                        additionalViewData: new { htmlAttributes = new { @class = "form-control" } })
+
+
+        @Html.ValidationMessageFor(expression: model => model.Endereco.Cep,
+                                   validationMessage: "",
+                                   htmlAttributes: new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(expression: model => model.Endereco.Logradouro,
+                   htmlAttributes: new { @class = "control-label col-md-2" })
+
+    <div class="col-md-10">
+        @Html.EditorFor(expression: model => model.Endereco.Logradouro,
+                        additionalViewData: new { htmlAttributes = new { @class = "form-control" } })
+
+        @Html.ValidationMessageFor(expression: model => model.Endereco.Logradouro,
+                                   validationMessage: "",
+                                   htmlAttributes: new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(expression: model => model.Endereco.Numero,
+                   htmlAttributes: new { @class = "control-label col-md-2" })
+
+    <div class="col-md-10">
+        @Html.EditorFor(expression: model => model.Endereco.Numero,
+                        additionalViewData: new { htmlAttributes = new { @class = "form-control" } })
+
+        @Html.ValidationMessageFor(expression: model => model.Endereco.Numero,
+                                   validationMessage: "",
+                                   htmlAttributes: new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(expression: model => model.Endereco.Complemento,
+                   htmlAttributes: new { @class = "control-label col-md-2" })
+
+    <div class="col-md-10">
+        @Html.EditorFor(expression: model => model.Endereco.Complemento,
+                        additionalViewData: new { htmlAttributes = new { @class = "form-control" } })
+
+        @Html.ValidationMessageFor(expression: model => model.Endereco.Complemento,
+                                   validationMessage: "",
+                                   htmlAttributes: new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(expression: model => model.Endereco.Bairro,
+                   htmlAttributes: new { @class = "control-label col-md-2" })
+
+    <div class="col-md-10">
+        @Html.EditorFor(expression: model => model.Endereco.Bairro,
+                        additionalViewData: new { htmlAttributes = new { @class = "form-control" } })
+
+        @Html.ValidationMessageFor(expression: model => model.Endereco.Bairro,
+                                   validationMessage: "",
+                                   htmlAttributes: new { @class = "text-danger" })
+
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(expression: model => model.Endereco.Cidade,
+                   htmlAttributes: new { @class = "control-label col-md-2" })
+
+    <div class="col-md-10">
+        @Html.EditorFor(expression: model => model.Endereco.Cidade,
+                        additionalViewData: new { htmlAttributes = new { @class = "form-control" } })
+
+        @Html.ValidationMessageFor(expression: model => model.Endereco.Cidade,
+                                   validationMessage: "",
+                                   htmlAttributes: new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(expression: model => model.Endereco.Estado,
+                   htmlAttributes: new { @class = "control-label col-md-2" })
+
+    <div class="col-md-10">
+        @Html.EditorFor(expression: model => model.Endereco.Estado,
+                        additionalViewData: new { htmlAttributes = new { @class = "form-control" } })
+
+        @Html.ValidationMessageFor(expression: model => model.Endereco.Estado,
+                                   validationMessage: "",
+                                   htmlAttributes: new { @class = "text-danger" })
+    </div>
+</div>
+

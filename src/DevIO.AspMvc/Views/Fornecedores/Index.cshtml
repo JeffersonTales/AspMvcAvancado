@@ -1,0 +1,64 @@
+﻿@model IEnumerable<DevIO.AspMvc.ViewModels.FornecedorViewModel>
+
+@{
+    ViewBag.Title = "Lista de Fornecedores";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    <a class="btn btn-info" href="@Url.Action(actionName: "Create", 
+                                              controllerName:"Fornecedores")">
+        Novo Fornecedor
+    </a>
+</p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(expression: model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(expression: model => model.Documento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(expression: model => model.Ativo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(expression: modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(expression: modelItem => item.Documento)
+                </td>
+                <td>
+                    @Html.DisplayFor(expression: modelItem => item.Ativo)
+                </td>
+                <td class="text-right">
+                    <a class="btn btn-warning" href="@Url.Action(actionName:"Details",
+                                                                 controllerName:"Fornecedores",
+                                                                 routeValues: new {id = item.Id})">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </a>
+                    <a class="btn btn-warning" href="@Url.Action(actionName:"Edit",
+                                                                 controllerName:"Fornecedores",
+                                                                 routeValues: new {id = item.Id})">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a class="btn btn-warning" href="@Url.Action(actionName:"Delete",
+                                                                 controllerName:"Fornecedores",
+                                                                 routeValues: new {id = item.Id})">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

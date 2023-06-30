@@ -18,24 +18,36 @@
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink(linkText:"Home",
-                                         actionName: "Index",
-                                         controllerName:"Home",
-                                         routeValues: new { area = "" },
-                                         htmlAttributes: new { @class = "nav-link" })</li>
+                    <li>
+                        @Html.ActionLink(linkText: "Home",
+                                     actionName: "Index",
+                                     controllerName: "Home",
+                                     routeValues: new { area = "" },
+                                     htmlAttributes: new { @class = "nav-link" })
+                </li>
 
-                    <li>@Html.ActionLink(linkText: "Produtos",
-                                         actionName: "Index",
-                                         controllerName: "Produtos", 
-                                         routeValues: new { area = "" },
-                                         htmlAttributes: new { @class = "nav-link" })</li>
+                <li>
+                    @Html.ActionLink(linkText: "Produtos",
+                                 actionName: "Index",
+                                 controllerName: "Produtos",
+                                 routeValues: new { area = "" },
+                                 htmlAttributes: new { @class = "nav-link" })
+                </li>
 
-                    @*<li>@Html.ActionLink(linkText: "Contact",
-                                         actionName: "Contact",
-                                         controllerName: "Home",
-                                         routeValues: new { area = "" },
-                                         htmlAttributes: new { @class = "nav-link" })</li>*@
-                
+                <li>
+                    @Html.ActionLink(linkText: "Fornecedores",
+                                     actionName: "Index",
+                                     controllerName: "Fornecedores",
+                                     routeValues: new { area = "" },
+                                     htmlAttributes: new { @class = "nav-link" })
+                </li>
+
+                @*<li>@Html.ActionLink(linkText: "Contact",
+    actionName: "Contact",
+    controllerName: "Home",
+    routeValues: new { area = "" },
+    htmlAttributes: new { @class = "nav-link" })</li>*@
+
                 </ul>
                  @Html.Partial("_LoginPartial")
             </div>
